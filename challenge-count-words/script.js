@@ -1,10 +1,21 @@
 function calculateWords(chapterOfABook) {
   const wordCount = {};
 
-  // Write your code in here
+  let split = chapterOfABook.split(" ");
+
+  split.forEach((word) => {
+    if (word !== "") {
+      if (!wordCount[word]) {
+        wordCount[word] = 1;
+      } else {
+        wordCount[word] += 1;
+      }
+    }
+  });
 
   return wordCount;
 }
+
 
 calculateWords(getDraculaChapterOne());
 
