@@ -31,11 +31,16 @@ function guessNumber () {
 
   // If the user has guessed the random number correctly print out the randomNumber with a message "Guess is correct. You win!"
   else {
+    //maximum tries allowed are 5 at 6 try it will say you loose
+
+  //   outPut.value = 'You Lose, the number was ' + randomNumber
+  // }else{
     outPut.value =
       'Guess is correct. You win!' + 'It took you ' + tries + ' tries to win'
-  }
+  // }
   maxTries -= 1
 }
+
 
 // For this task we will be making a "New Game" button function which will reset our game,
 // Once the user clicks on this button the user will have new random number to guess
