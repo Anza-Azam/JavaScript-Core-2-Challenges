@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 let randomNumber = Math.floor(Math.random() * 100 + 1)
 let maxTries = 5 //Maximum tries allowed are 5
 let tries = 0
@@ -40,52 +39,6 @@ function guessNumber () {
       'Guess is correct. You win!' + 'It took you ' + tries + ' tries to win'
   // }
   maxTries -= 1
-=======
-let randomNumber = Math.floor(Math.random() * 100 + 1);
-let maxTries=3;
-let tries=0; 
-console.log(randomNumber)
-function guessNumber() {
-  //Collect input from the user
-  let guess = document.querySelector('.inputs-Values').value
-tries +=1
-console.log(maxTries)
-if (maxTries===tries){
- 
-    let outPut = document.querySelector('.final-output')
-    outPut.value = 'You Loose'
-
-}
-  //If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
- else if (guess <= 0 || guess > 100) {
-    let outPut = document.querySelector('.final-output')
-    outPut.value = 'Please enter a number between 1 and 100'
-
-  }
-
-
-  //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
-  else if (guess > randomNumber) {
-    let outPut = document.querySelector('.final-output')
-    outPut.value = 'Number is too high';
-  }
-  //If the users guess is lower than the random number print Number is too low, try again  (hint use .final-out class to print)
-else if (guess < randomNumber) {
-  let outPut = document.querySelector('.final-output'
-)
-  outPut.value = 'Number is too low';
-}
-
-
-  //If the user has guessed the random number correctly print out the randomNumber with a message "Guess is correct. You win!"
-
- else {  console.log(guess)
-  let outPut = document.querySelector('.final-output')
-    outPut.value = 'Guess is correct. You win!' + 'It took you ' + tries +' tries to win'
-
-}
-
->>>>>>> Stashed changes
 }
 
 
