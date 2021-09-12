@@ -58,17 +58,14 @@ justify-content: space-between;
   }
 
 .s-player{flex-direction:column;
-border:10px solid red;
+
 color:rgb(12, 11, 11);
   display:flex;
 }
 .l-player {
   flex-direction: column;
- border:10px solid red;
+
  color:rgb(15, 6, 6);
     display : flex;
 }
 .l{color:rgb(14, 8, 8)}
-#my-canvas, #my-canvas2{
-
-}

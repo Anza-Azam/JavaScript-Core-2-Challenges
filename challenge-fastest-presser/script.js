@@ -59,13 +59,13 @@ counterS = 0;
 function checkTime() {
     const player = document.getElementById('result')
   const timeLimit = document.getElementById("timer");
-  if (timeLimit.value < 2000) {
+  if (timeLimit.value < 1) {
     clearInterval(interval)
     stopgame();
   }
   else {
-     player.innerText = timeLimit.value-1000;
-    (timeLimit.value -= 1000);
+     player.innerText = timeLimit.value-1;
+    (timeLimit.value -= 1);
    
   
   }
