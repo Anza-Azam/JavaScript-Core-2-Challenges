@@ -35,6 +35,10 @@ counterS = 0;
 counterL = 0;
   const timeLimit = document.getElementById("timer");
   document.addEventListener("keypress", keyBoardEvents);
+  if (timeLimit.value === '') {
+    alert('please input time')
+    restartButton();
+  }
   console.log(timeLimit.value);
   const player = document.getElementById('result')
   player.innerText = timeLimit.value;
@@ -60,18 +64,22 @@ function checkTime() {
 window.onload = setup;
 
 function stopgame() {
-  
+  //clearInterval(interval)
   const player = document.getElementById('result')
-  if (counterS === counterL) {
-    player.innerText = "game tied, new game starts in 2 seconds"
-//     var confettiSettings = { target: 'my-canvas' };
-// var confetti = new ConfettiGenerator(confettiSettings);
-// confetti.render();
+  if (counterS === counterL && counterS > 0 && counterL > 0) {
+    player.innerText = "game tied, new game starts in 4 seconds"
+    //     var confettiSettings = { target: 'my-canvas' };
+    // var confetti = new ConfettiGenerator(confettiSettings);
+    // confetti.render();
   }
   else if (counterS > counterL)
-    (player.innerText = "Player S wins the game"+ " new game starts in 2 seconds")
+    (player.innerText = "Player S wins the game" + " new game starts in 4 seconds")
   
-  else (player.innerText = "Player L wins the game"+" new game starts in 2 seconds");
+  else if (counterL > counterS) {
+    player.innerText = "Player L wins the game" + " new game starts in 4 seconds"
+  }
+    else { player.innerText= 'No Winners' + ' new game starts in 4 seconds' }
+  
 
   setTimeout(() => {
     const timeLimit = document.getElementById("timer");
@@ -83,7 +91,23 @@ function stopgame() {
     playerL.innerText = 'Press "L"'
     
     timeLimit.value=''
-  },2000);
+  },4000);
  // player.innerText = 'game stopped'
   
+}
+ 
+const restart = document.getElementById('restart');
+restart.addEventListener('click', restartButton)
+function restartButton() {
+  clearInterval(interval)
+  const player = document.getElementById('result')
+  const timeLimit = document.getElementById("timer");
+  const players = document.getElementById("s");
+  const playerL = document.getElementById("l");
+  // const timeLimit = document.getElementById("timer");
+  player.innerText = ''
+  players.innerText = 'Press "S"'
+  playerL.innerText = 'Press "L"'
+    
+  timeLimit.value = ''
 }
