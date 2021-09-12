@@ -4,7 +4,11 @@ function setup() {
   
   const startButton = document.getElementById('start');
   startButton.addEventListener('click', startGame)
-  document.removeEventListener("keypress")
+  document.removeEventListener("keypress", keyBoardEvents)
+  const confetti = document.getElementById('my-canvas')
+  confetti.style.display = 'none';
+  const confetti2 = document.getElementById('my-canvas2')
+  confetti2.style.display='none'
   
 
 
@@ -33,7 +37,11 @@ function keyBoardEvents(e) {
 function startGame()
 {
 counterS = 0;
-counterL = 0;
+  counterL = 0;
+  const confetti = document.getElementById('my-canvas')
+  confetti.style.display = 'none';
+  const confetti2 = document.getElementById('my-canvas2')
+  confetti2.style.display='none'
   const timeLimit = document.getElementById("timer");
   document.addEventListener("keypress", keyBoardEvents);
   if (timeLimit.value === '') {
@@ -66,18 +74,36 @@ window.onload = setup;
 
 function stopgame() {
   clearInterval(interval)
+   
   const player = document.getElementById('result')
   if (counterS === counterL && counterS > 0 && counterL > 0) {
     player.innerText = "game tied, new game starts in 4 seconds"
-    //     var confettiSettings = { target: 'my-canvas' };
-    // var confetti = new ConfettiGenerator(confettiSettings);
-    // confetti.render();
+       
   }
   else if (counterS > counterL)
+  {
     (player.innerText = "Player S wins the game" + " new game starts in 4 seconds")
+    const winner= document.createElement('canvas')
+    winner.id='my-canvas2';
+    var ele = document.getElementById('my-canvas2');
+   // ele.appendChild(winner);
+ele.style.display='flex'
+    var confettiSettings = { target: 'my-canvas2' };
+    var confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
+  }
   
   else if (counterL > counterS) {
+
     player.innerText = "Player L wins the game" + " new game starts in 4 seconds"
+   // const winner= document.createElement('canvas')
+    //winner.id='my-canvas';
+    var ele = document.getElementById('my-canvas');
+    //ele.appendChild(winner);
+    ele.style.display = 'flex';
+    var confettiSettings = { target: 'my-canvas' };
+    var confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
   }
     else { player.innerText= 'No Winners' + ' new game starts in 4 seconds' }
   
@@ -101,6 +127,10 @@ const restart = document.getElementById('restart');
 restart.addEventListener('click', restartButton)
 function restartButton() {
   clearInterval(interval)
+  const confetti = document.getElementById('my-canvas')
+  confetti.style.display = 'none';
+  const confetti2 = document.getElementById('my-canvas2')
+  confetti2.style.display='none'
   const player = document.getElementById('result')
   const timeLimit = document.getElementById("timer");
   const players = document.getElementById("s");
