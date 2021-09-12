@@ -27,20 +27,35 @@ function keyBoardEvents(e) {
   }
 }
 
-
+  let interval
 
 function startGame()
 {
 counterS = 0;
-counterL=0;
+counterL = 0;
   const timeLimit = document.getElementById("timer");
   document.addEventListener("keypress", keyBoardEvents);
   console.log(timeLimit.value);
+  const player = document.getElementById('result')
+  player.innerText = timeLimit.value;
+  interval = setInterval(checkTime, 1000);
 
-  setTimeout(stopgame,(timeLimit.value*1000))
 
 }
 
+function checkTime() {
+    const player = document.getElementById('result')
+  const timeLimit = document.getElementById("timer");
+  if (timeLimit.value <= 0) {
+    clearInterval(interval)
+    stopgame();
+  }
+  else {
+    (timeLimit.value -= 1000);
+    player.innerText = timeLimit.value - 1000;
+  
+  }
+}
 window.onload = setup;
 
 function stopgame() {
@@ -48,9 +63,9 @@ function stopgame() {
   const player = document.getElementById('result')
   if (counterS === counterL) {
     player.innerText = "game tied, new game starts in 2 seconds"
-    var confettiSettings = { target: 'my-canvas' };
-var confetti = new ConfettiGenerator(confettiSettings);
-confetti.render();
+//     var confettiSettings = { target: 'my-canvas' };
+// var confetti = new ConfettiGenerator(confettiSettings);
+// confetti.render();
   }
   else if (counterS > counterL)
     (player.innerText = "Player S wins the game"+ " new game starts in 2 seconds")

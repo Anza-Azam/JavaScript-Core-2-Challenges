@@ -16,15 +16,23 @@ body {
 .content {
 	display: grid;
 	width: 100%;
+background:url("https://image.everypixel.com/blockchain/preview/af/91/af9111a89fad41a4a73361cdb4971de6.jpg");
 
 	grid-gap: 50px;
 	grid-template-rows: 0.5fr 0.5fr 2fr 2fr;
 justify-items: stretch;
-	height: 60vh;
-	background-color: burlywood;
+	height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+
+
+	/* background-color: burlywood; */
 }
 
 .userInteraction {
+
 
 	display: flex;
 	flex-direction: column;
@@ -38,6 +46,7 @@ padding-top:100px;
 }
 
 .display{
+
   display:flex;
 justify-content: space-between;
   padding:10px;
