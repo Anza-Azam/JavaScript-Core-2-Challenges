@@ -4,7 +4,8 @@ function setup() {
   
   const startButton = document.getElementById('start');
   startButton.addEventListener('click', startGame)
-  document.removeEventListener(keyBoardEvents);
+  document.removeEventListener("keypress")
+  
 
 
 }
