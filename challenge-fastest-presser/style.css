@@ -1,11 +1,11 @@
 * {
 	/* background-color: white; */
-	margin:0 auto;
+	margin: 0 auto;
 	box-sizing: border-box;
 	padding: 0;
 	font-size: 32px;
-  font-weight: bolder;
-  font-family:cursive
+	font-weight: bolder;
+	font-family: cursive;
 }
 body {
 	/* //display: grid; */
@@ -13,59 +13,55 @@ body {
 	height: 100vh;
 	background-color: rgb(167, 141, 190);
 	/* grid-template-rows: 60%; */
-	border: 10px solid black;
 }
 .content {
 	display: grid;
 	/* width: 100%;
-background:url("https://image.everypixel.com/blockchain/preview/af/91/af9111a89fad41a4a73361cdb4971de6.jpg"); */ 
-width:100%; 
+background:url("https://image.everypixel.com/blockchain/preview/af/91/af9111a89fad41a4a73361cdb4971de6.jpg"); */
+	width: 100%;
 	grid-gap: 50px;
 	grid-template-rows: 0.5fr 0.5fr 2fr 2fr;
-justify-items: stretch;
+	justify-items: stretch;
 	height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-
-
+	background-repeat: no-repeat;
+	background-size: cover;
 
 	/* background-color: burlywood; */
 }
 
 .userInteraction {
-
-
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: center;
 
-padding-top:100px;
+	padding-top: 100px;
 	width: 100%;
-	
+
 	/* background-color: rgb(87, 87, 126); */
 }
 
-.display{
+.display {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	width: 100%;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
 
-  display:flex;
-justify-content: space-between;
-  padding:10px;
-  width:100%;
-  flex-direction: row;
-  flex-wrap: wrap;
-  }
+.s-player {
+	flex-direction: column;
 
-.s-player{flex-direction:column;
-
-color:rgb(12, 11, 11);
-  display:flex;
+	color: rgb(12, 11, 11);
+	display: flex;
 }
 .l-player {
-  flex-direction: column;
+	flex-direction: column;
 
- color:rgb(15, 6, 6);
-    display : flex;
+	color: rgb(15, 6, 6);
+	display: flex;
 }
-.l{color:rgb(14, 8, 8)}
+.l {
+	color: rgb(14, 8, 8);
+}
