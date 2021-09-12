@@ -83,8 +83,8 @@ function stopgame() {
   else if (counterS > counterL)
   {
     (player.innerText = "Player S wins the game" + " new game starts in 4 seconds")
-    const winner= document.createElement('canvas')
-    winner.id='my-canvas2';
+   // const winner= document.createElement('canvas')
+    //winner.id='my-canvas2';
     var ele = document.getElementById('my-canvas2');
    // ele.appendChild(winner);
 ele.style.display='flex'
@@ -116,7 +116,10 @@ ele.style.display='flex'
     player.innerText = ''
     players.innerText = 'Press "S"'
     playerL.innerText = 'Press "L"'
-    
+    const confetti = document.getElementById('my-canvas')
+  confetti.style.display = 'none';
+  const confetti2 = document.getElementById('my-canvas2')
+  confetti2.style.display='none'
     timeLimit.value=''
   },4000);
  // player.innerText = 'game stopped'
