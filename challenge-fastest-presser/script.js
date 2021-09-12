@@ -51,8 +51,9 @@ function checkTime() {
     stopgame();
   }
   else {
+     player.innerText = timeLimit.value-1000;
     (timeLimit.value -= 1000);
-    player.innerText = timeLimit.value - 1000;
+   
   
   }
 }
