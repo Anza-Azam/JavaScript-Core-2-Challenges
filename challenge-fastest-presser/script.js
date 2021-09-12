@@ -46,7 +46,7 @@ counterL = 0;
 function checkTime() {
     const player = document.getElementById('result')
   const timeLimit = document.getElementById("timer");
-  if (timeLimit.value <= 0) {
+  if (timeLimit.value < 2000) {
     clearInterval(interval)
     stopgame();
   }
