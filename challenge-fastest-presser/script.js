@@ -1,13 +1,14 @@
+let counterS;
+let counterL;
 function setup() {
- 
+  
   const startButton = document.getElementById('start');
   startButton.addEventListener('click', startGame)
 
 
 
 }
-let counterS = 0;
-let counterL=0;
+
 
 function keyBoardEvents(e) {
   if (e.keyCode === 83) {
@@ -30,6 +31,8 @@ function keyBoardEvents(e) {
 
 function startGame()
 {
+counterS = 0;
+counterL=0;
   const timeLimit = document.getElementById("timer");
   document.addEventListener("keypress", keyBoardEvents);
   console.log(timeLimit.value);
@@ -41,11 +44,30 @@ function startGame()
 window.onload = setup;
 
 function stopgame() {
+  
   const player = document.getElementById('result')
-  counterS > counterL
-    ? (player.innerText = "Swins")
-    : (player.innerText = "Lwins");
+  if (counterS === counterL) {
+    player.innerText = "game tied, new game starts in 2 seconds"
+    var confettiSettings = { target: 'my-canvas' };
+var confetti = new ConfettiGenerator(confettiSettings);
+confetti.render();
+  }
+  else if (counterS > counterL)
+    (player.innerText = "Player S wins the game"+ " new game starts in 2 seconds")
+  
+  else (player.innerText = "Player L wins the game"+" new game starts in 2 seconds");
 
+  setTimeout(() => {
+    const timeLimit = document.getElementById("timer");
+    const players = document.getElementById("s");
+     const playerL= document.getElementById("l");
+    // const timeLimit = document.getElementById("timer");
+    player.innerText = ''
+    players.innerText = 'Press "S"'
+    playerL.innerText = 'Press "L"'
+    
+    timeLimit.value=''
+  },2000);
  // player.innerText = 'game stopped'
   
 }

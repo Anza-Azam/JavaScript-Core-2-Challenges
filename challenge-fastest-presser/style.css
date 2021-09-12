@@ -18,8 +18,8 @@ body {
 	width: 100%;
 
 	grid-gap: 50px;
-	grid-template-rows: 0.5fr 0.5fr 0.5fr;
-	justify-content: space-evenly;
+	grid-template-rows: 0.5fr 0.5fr 2fr 2fr;
+justify-items: stretch;
 	height: 60vh;
 	background-color: burlywood;
 }
@@ -41,15 +41,16 @@ padding-top:100px;
   display:flex;
 justify-content: space-between;
   padding:10px;
+  width:100%;
   flex-direction: row;
   flex-wrap: wrap;
   }
 
 .display > .s-player{flex-direction:column;
-
+border:1px solid red;
   display:flex;
 }
 .display >.l-player {
-  flex-direction: coulmn;
+ border:1px solid red;
     display : flex;
 }

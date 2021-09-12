@@ -19,7 +19,9 @@
     <div class="content">
 
 <h1>Fastest Presser</h1>
+<h2 id='result'></h2>
 <section class='userInteraction'>
+  <Label> Enter time in seconds to play the game</Label>
 <input type="number" min='1' id='timer'/> 
 <button type="submit" id='start' > Start Game</button>
 
@@ -28,14 +30,15 @@
 <section class='display'><div id='s-player'>
 
 <p>PLAYER S </p>
-<p>Press "S" </p>
+<p id='s'>Press "S" </p>
 </div>
 <div id='l-player'>
 <p > PLAYER L </p>
-<p>Press "L" </p >
+<p id ='l'>Press "L" </p >
 
 
 </div>
+<!-- <canvas id = "my-canvas" > </canvas> -->
 
 
 </section>
@@ -43,6 +46,7 @@
 
 
   </body>
+<script src = "https://cdn.jsdelivr.net/npm/confetti-js@0.0.13/dist/index.min.js" > </scripT>
 
   <script src="script.js"></script>
 </html>
