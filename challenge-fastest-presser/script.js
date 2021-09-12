@@ -1,10 +1,10 @@
 let counterS;
 let counterL;
-function setup() {
+function setup() { 
   
   const startButton = document.getElementById('start');
   startButton.addEventListener('click', startGame)
-
+  document.removeEventListener(keyBoardEvents);
 
 
 }
@@ -64,7 +64,7 @@ function checkTime() {
 window.onload = setup;
 
 function stopgame() {
-  //clearInterval(interval)
+  clearInterval(interval)
   const player = document.getElementById('result')
   if (counterS === counterL && counterS > 0 && counterL > 0) {
     player.innerText = "game tied, new game starts in 4 seconds"
