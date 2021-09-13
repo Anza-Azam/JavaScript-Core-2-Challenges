@@ -70,7 +70,7 @@ function stopgame() {
 		player.innerText = 'Player S wins the game' + ' new game starts in 4 seconds';
 		let element = document.getElementById('my-canvas2');
 
-		element.style.display = 'flex';
+		element.style.display = 'block';
 		let confettiSettings = { target: 'my-canvas2' };
 		let confetti = new ConfettiGenerator(confettiSettings);
 		confetti.render();
@@ -79,7 +79,7 @@ function stopgame() {
 
 		let element = document.getElementById('my-canvas');
 
-		element.style.display = 'flex';
+		element.style.display = 'block';
 		let confettiSettings = { target: 'my-canvas' };
 		let confetti = new ConfettiGenerator(confettiSettings);
 		confetti.render();
