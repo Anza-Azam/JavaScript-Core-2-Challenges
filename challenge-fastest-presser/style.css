@@ -16,8 +16,7 @@ body {
 }
 .content {
 	display: grid;
-	/* width: 100%;
-background:url("https://image.everypixel.com/blockchain/preview/af/91/af9111a89fad41a4a73361cdb4971de6.jpg"); */
+	
 	width: 100%;
 	grid-gap: 50px;
 	grid-template-rows: 0.5fr 0.5fr 2fr 2fr;

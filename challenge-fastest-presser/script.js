@@ -61,46 +61,34 @@ function checkTime() {
 window.onload = setup;
 
 function stopgame() {
-	clearInterval(interval);
+  clearInterval(interval);
 
-	const player = document.getElementById('result');
-	if (counterS === counterL && counterS > 0 && counterL > 0) {
-		player.innerText = 'game tied, new game starts in 4 seconds';
-	} else if (counterS > counterL) {
-		player.innerText = 'Player S wins the game' + ' new game starts in 4 seconds';
-		let element = document.getElementById('my-canvas2');
+  const player = document.getElementById('result');
+  if (counterS === counterL && counterS > 0 && counterL > 0) {
+    player.innerText = 'game tied, new game starts in 4 seconds';
+  } else if (counterS > counterL) {
+    player.innerText = 'Player S wins the game' + ' new game starts in 4 seconds';
+    let element = document.getElementById('my-canvas2');
 
-		element.style.display = 'block';
-		let confettiSettings = { target: 'my-canvas2' };
-		let confetti = new ConfettiGenerator(confettiSettings);
-		confetti.render();
-	} else if (counterL > counterS) {
-		player.innerText = 'Player L wins the game' + ' new game starts in 4 seconds';
+    element.style.display = 'block';
+    let confettiSettings = { target: 'my-canvas2' };
+    let confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
+  } else if (counterL > counterS) {
+    player.innerText = 'Player L wins the game' + ' new game starts in 4 seconds';
 
-		let element = document.getElementById('my-canvas');
+    let element = document.getElementById('my-canvas');
 
-		element.style.display = 'block';
-		let confettiSettings = { target: 'my-canvas' };
-		let confetti = new ConfettiGenerator(confettiSettings);
-		confetti.render();
-	} else {
-		player.innerText = 'No Winners' + ' new game starts in 4 seconds';
-	}
+    element.style.display = 'block';
+    let confettiSettings = { target: 'my-canvas' };
+    let confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
+  } else {
+    player.innerText = 'No Winners' + ' new game starts in 4 seconds';
+  }
 
-	setTimeout(() => {
-		const timeLimit = document.getElementById('timer');
-		const players = document.getElementById('s');
-		const playerL = document.getElementById('l');
-document.removeEventListener('keypress', keyBoardEvents);
-		player.innerText = '';
-		players.innerText = 'Press "S"';
-		playerL.innerText = 'Press "L"';
-		const confetti = document.getElementById('my-canvas');
-		confetti.style.display = 'none';
-		const confetti2 = document.getElementById('my-canvas2');
-		confetti2.style.display = 'none';
-		timeLimit.value = '';
-	}, 4000);
+  setTimeout(restartButton, 4000)
+   document.removeEventListener('keypress', keyBoardEvents);
 }
 
 const restart = document.getElementById('restart');
